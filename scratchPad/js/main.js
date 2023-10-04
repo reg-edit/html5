@@ -8,5 +8,5 @@ window.onload=function()
         parent: 'phaser-game',
         scene:[SceneMain]
     };
-    var game = new Phaser.Game(config);
+    game = new Phaser.Game(config);
 }
