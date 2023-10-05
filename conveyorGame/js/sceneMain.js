@@ -5,12 +5,16 @@ class SceneMain extends Phaser.Scene {
     preload()
     {
         //load images or sounds
+        this.load.image("box", "images/box.png")
+
        
     }
     create()
     {
         //define objects
-        console.log("Ready!");
+        //this.box=this.height.image(10)
+        this.box=this.add.image(0,game.config.height/2, "box")
+
     }
     update(){
         //constant running loop
