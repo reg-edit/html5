@@ -3,11 +3,11 @@ window.onload=function()
 {
     var config = {
         type: Phaser.AUTO,
-        width: 1088,
-        height: 200,
+        width: 1632,
+        height: 300,
         parent: 'phaser-game',
         scene:[SceneMain],
-        zoom:1.5
+        zoom:1
     
     };
     game = new Phaser.Game(config);
