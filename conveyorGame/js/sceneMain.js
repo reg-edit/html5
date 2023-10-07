@@ -29,6 +29,7 @@ class SceneMain extends Phaser.Scene {
         let machScale = .3
         let boxScale = .2
         let beltSpeed = 12
+        let beltAmount = 5
 
 
         //Belt Animations
@@ -68,7 +69,7 @@ class SceneMain extends Phaser.Scene {
 
         this.add.sprite(firstBeltx,150, "belt1").play("l2rAnim").setScale(beltScale)
 
-        for(let i = 0; i < 3; i++){
+        for(let i = 0; i < beltAmount; i++){
             this.add.sprite(currentBeltx,150, "belt1").play("l2rAnim").setScale(beltScale)
             currentBeltx = currentBeltx+(256*beltScale)
         }
