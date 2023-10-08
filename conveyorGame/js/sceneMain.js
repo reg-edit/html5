@@ -25,11 +25,11 @@ class SceneMain extends Phaser.Scene {
     {
 
         //Scale
-        let beltScale = .3
-        let machScale = .3
+        let beltScale = .4
+        let machScale = .25
         let boxScale = .2
         let beltSpeed = 12
-        let beltAmount = 5
+        let beltAmount = 6
 
 
         //Belt Animations
@@ -58,12 +58,11 @@ class SceneMain extends Phaser.Scene {
         })
 
         //Background
-
-        this.background = this.add.image(550,20, "background").setScale(1)
+        this.background = this.add.image(0,-440, "background").setScale(.6,.55).setOrigin(0,0)
 
 
         //Belt Placement
-        let firstBeltx = 500
+        let firstBeltx = 0
         let currentBeltx = firstBeltx+(256*beltScale)
 
 
@@ -73,11 +72,14 @@ class SceneMain extends Phaser.Scene {
             this.add.sprite(currentBeltx,150, "belt1").play("l2rAnim").setScale(beltScale)
             currentBeltx = currentBeltx+(256*beltScale)
         }
+        
 
         //Machine Placement
-        this.machine = this.add.image(currentBeltx,150, "machine").setScale(machScale)
-        
- 
+        const machine = this.add.image(currentBeltx,150, "machine").setScale(machScale)
+
+
+   
+
 
         //this.add.sprite(1100,150, "belt1").play("l2rAnim").setScale(beltScale)
 
@@ -90,6 +92,7 @@ class SceneMain extends Phaser.Scene {
 
         
 
+        // Graphics
 
 
 
@@ -107,6 +110,10 @@ class SceneMain extends Phaser.Scene {
              console.log(beltSpeed)
         });
 
+
+        //Text
+        this.textTag = this.add.text(10,10, "Automate the SHIP out of it!",{fontFamily:'Sora',fontSize:40,fontStyle:800}).setStroke("black",3)
+        
         
     }
     update() //constant running loop
