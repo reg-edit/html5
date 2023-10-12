@@ -6,6 +6,12 @@ window.onload=function()
         width: 1632,
         height: 300,
         parent: 'phaser-game',
+        physics: {
+            default: "arcade",
+            arcade: {
+                debug: true
+            }
+        },
         scene:[SceneMain],
         zoom:1
     

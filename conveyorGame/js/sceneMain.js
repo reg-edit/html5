@@ -1,7 +1,11 @@
 class SceneMain extends Phaser.Scene {
-    constructor() {
-        super('SceneMain');
-    }
+
+    // constructor() {
+    //     super('SceneMain');
+    // }
+
+    inZone = false
+
     preload() //load images or sounds
     {
         this.load.image("box", "images/box.png")
@@ -82,7 +86,7 @@ class SceneMain extends Phaser.Scene {
         //Machine Placement
         this.machine = this.add.image(600,150, "machine").setScale(machScale)
 
-        //Controllers
+        /* Controllers */
         // this.input.keyboard.on('keydown-D', event =>
         // {
         //      box.x += 4;
@@ -98,11 +102,25 @@ class SceneMain extends Phaser.Scene {
         //Text
         this.textTag = this.add.text(10,10, "Automate the SHIP out of it!",{fontFamily:'Sora',fontSize:40,fontStyle:800}).setStroke("black",3)
         
+        //Test Area
+
+
+
+        this.physics.world.enable([this.box])
+        this.physics.world.enable([this.machine])
+
+        this.box.body.setVelocity(20,0)
+
+        this.physics.add.overlap(this.box, this.machinem, function() {
+            inZone = true
+        })
 
     }
     update() //constant running loop
     {
-        
+        if(this.inZone = false) {
+            console.log("touch")
+        }
         
     }
 }
