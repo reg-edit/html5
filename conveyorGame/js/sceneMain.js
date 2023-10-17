@@ -111,14 +111,14 @@ class SceneMain extends Phaser.Scene {
 
         this.box.body.setVelocity(20,0)
 
-        this.physics.add.overlap(this.box, this.machinem, function() {
+        this.physics.add.overlap(this.box, this.machine, function() {
             inZone = true
         })
 
     }
     update() //constant running loop
     {
-        if(this.inZone = false) {
+        if(inZone = false) {
             console.log("touch")
         }
         
